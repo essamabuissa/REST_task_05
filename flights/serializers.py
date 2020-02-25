@@ -43,3 +43,13 @@ class RegisterSerializer(serializers.ModelSerializer):
         new_user.set_password(password)
         new_user.save()
         return validated_data
+
+class UpdateBookingAdminSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = Booking
+		fields = ['passengers' , 'date']
+
+class UpdateBookingUserSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = Booking
+		fields = ['passengers']
